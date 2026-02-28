@@ -122,7 +122,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src={patioImg} alt="Crema patio" className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700" />
+              <img alt="Crema patio" className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700" src="/lovable-uploads/cd1bc4ea-0549-4f02-82ad-c0631abcc4a9.jpg" />
             </div>
           </div>
         </div>

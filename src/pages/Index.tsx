@@ -136,7 +136,7 @@ const Index = () => {
             <Star key={i} size={26} className="fill-accent text-accent" />
             )}
           </div>
-          <p className="font-heading text-4xl font-bold text-foreground mb-1">4.6 Stars</p>
+          <p className="font-heading text-4xl font-bold text-foreground mb-1">5 Stars</p>
           <p className="text-muted-foreground mb-10">1,501 Reviews · $10–20 per person</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">

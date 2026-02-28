@@ -1,5 +1,6 @@
+import { useState } from "react";
 import SectionWrapper from "@/components/SectionWrapper";
-import { Leaf, WheatOff } from "lucide-react";
+import { Leaf, WheatOff, ChevronDown } from "lucide-react";
 
 interface MenuItem {
   name: string;
@@ -141,17 +142,17 @@ const Tag = ({ type }: { type: "gf" | "v" }) => (
 );
 
 const MenuItemRow = ({ item }: { item: MenuItem }) => (
-  <div className="py-4 border-b border-border/60 last:border-b-0">
+  <div className="py-4 border-b border-border/50 last:border-b-0">
     <div className="flex items-start justify-between gap-4">
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          <h3 className="font-heading text-lg font-semibold text-foreground">{item.name}</h3>
+          <h3 className="font-heading text-base md:text-lg font-semibold text-foreground">{item.name}</h3>
           {item.tags?.map((t) => <Tag key={t} type={t} />)}
         </div>
         {item.desc && <p className="text-muted-foreground text-sm mt-1">{item.desc}</p>}
       </div>
       {item.price && (
-        <span className="font-heading font-semibold text-foreground text-lg shrink-0">
+        <span className="font-heading font-semibold text-foreground text-base md:text-lg shrink-0">
           {item.price}
         </span>
       )}
@@ -174,9 +175,48 @@ const MenuItemRow = ({ item }: { item: MenuItem }) => (
   </div>
 );
 
+const CollapsibleCategory = ({ cat }: { cat: MenuCategory }) => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  return (
+    <SectionWrapper>
+      <div className="container mx-auto max-w-2xl">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex items-center justify-between md:pointer-events-none mb-2"
+        >
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+            {cat.title}
+          </h2>
+          <ChevronDown
+            size={24}
+            className={`md:hidden text-muted-foreground transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+        {cat.note && (
+          <p className="text-muted-foreground text-sm mb-4 border-l-2 border-accent pl-3">
+            {cat.note}
+          </p>
+        )}
+        <div
+          className={`transition-all duration-300 overflow-hidden ${
+            isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0 md:max-h-[2000px] md:opacity-100"
+          }`}
+        >
+          <div className="bg-card rounded-xl shadow-sm px-5 md:px-6">
+            {cat.items.map((item) => (
+              <MenuItemRow key={item.name} item={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </SectionWrapper>
+  );
+};
+
 const MenuPage = () => (
   <div className="pt-16">
-    <section className="bg-primary text-primary-foreground section-padding text-center">
+    <section className="bg-primary text-primary-foreground section-padding-sm text-center">
       <div className="container mx-auto max-w-2xl">
         <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Menu</h1>
         <p className="text-primary-foreground/80 text-lg">
@@ -186,23 +226,7 @@ const MenuPage = () => (
     </section>
 
     {categories.map((cat) => (
-      <SectionWrapper key={cat.title}>
-        <div className="container mx-auto max-w-2xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
-            {cat.title}
-          </h2>
-          {cat.note && (
-            <p className="text-muted-foreground text-sm mb-4 border-l-2 border-accent pl-3">
-              {cat.note}
-            </p>
-          )}
-          <div className="bg-card rounded-xl shadow-sm px-5 md:px-6">
-            {cat.items.map((item) => (
-              <MenuItemRow key={item.name} item={item} />
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
+      <CollapsibleCategory key={cat.title} cat={cat} />
     ))}
   </div>
 );

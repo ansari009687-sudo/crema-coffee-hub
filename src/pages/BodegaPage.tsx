@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionWrapper from "@/components/SectionWrapper";
-import { ShoppingBag, Coffee, Gift, Snowflake } from "lucide-react";
+import { ShoppingBag, Coffee, Gift, Snowflake, Clock, ArrowRight } from "lucide-react";
 import bodegaImg from "@/assets/bodega.jpg";
 
 const sections = [
@@ -33,7 +33,7 @@ const BodegaPage = () => (
       <img src={bodegaImg} alt="Crema Bodega" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-warm-overlay" />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+        <h1 className="font-heading text-3xl md:text-5xl font-bold text-accent-foreground mb-4 leading-tight">
           Just a Little More Than Your Neighborhood Corner Store.
         </h1>
       </div>
@@ -41,25 +41,26 @@ const BodegaPage = () => (
 
     <SectionWrapper>
       <div className="container mx-auto max-w-4xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {sections.map((s) => (
-            <div key={s.title} className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <s.icon size={32} className="text-accent mb-3" />
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-sm">{s.desc}</p>
+            <div key={s.title} className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+              <s.icon size={28} className="text-accent mb-3" />
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{s.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
       </div>
     </SectionWrapper>
 
-    <SectionWrapper className="bg-secondary/50 text-center">
+    <SectionWrapper className="bg-secondary/40 text-center">
       <div className="container mx-auto max-w-xl">
-        <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Bodega Hours</h2>
-        <p className="text-lg text-foreground mb-2">Open Daily 8 AM – 8 PM</p>
-        <p className="text-muted-foreground text-sm mb-6">Closed Thanksgiving and Christmas</p>
-        <Button asChild>
-          <Link to="/visit">Plan Your Visit</Link>
+        <Clock size={32} className="text-accent mx-auto mb-4" />
+        <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">Bodega Hours</h2>
+        <p className="text-lg text-foreground font-medium mb-2">Open Daily 8 AM – 8 PM</p>
+        <p className="text-muted-foreground text-sm mb-8">Closed Thanksgiving and Christmas</p>
+        <Button variant="warm" asChild>
+          <Link to="/visit">Plan Your Visit <ArrowRight size={16} /></Link>
         </Button>
       </div>
     </SectionWrapper>

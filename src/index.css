@@ -6,57 +6,58 @@
 
 @layer base {
   :root {
-    /* Warm cream background */
-    --background: 38 40% 97%;
-    --foreground: 24 20% 16%;
+    /* Cream background - #F5EFE6 */
+    --background: 36 45% 93%;
+    --foreground: 0 0% 12%;
 
     /* Slightly warmer card */
-    --card: 36 33% 95%;
-    --card-foreground: 24 20% 16%;
+    --card: 36 40% 96%;
+    --card-foreground: 0 0% 12%;
 
-    --popover: 38 40% 97%;
-    --popover-foreground: 24 20% 16%;
+    --popover: 36 45% 93%;
+    --popover-foreground: 0 0% 12%;
 
-    /* Espresso brown primary */
-    --primary: 24 30% 22%;
-    --primary-foreground: 38 40% 97%;
+    /* Espresso brown primary - #3B2F2F */
+    --primary: 0 11% 21%;
+    --primary-foreground: 36 45% 93%;
 
     /* Warm cream secondary */
     --secondary: 34 30% 90%;
-    --secondary-foreground: 24 30% 22%;
+    --secondary-foreground: 0 11% 21%;
 
     /* Muted warm gray */
-    --muted: 30 15% 90%;
-    --muted-foreground: 24 10% 46%;
+    --muted: 30 12% 88%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Terracotta accent */
-    --accent: 16 55% 52%;
-    --accent-foreground: 38 40% 97%;
+    /* Terracotta accent - #C26E3D */
+    --accent: 20 54% 50%;
+    --accent-foreground: 36 45% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 87%;
-    --input: 30 20% 87%;
-    --ring: 24 30% 22%;
+    --border: 30 18% 85%;
+    --input: 30 18% 85%;
+    --ring: 20 54% 50%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --cream: 38 40% 97%;
-    --espresso: 24 30% 22%;
-    --terracotta: 16 55% 52%;
-    --warm-gray: 30 10% 60%;
+    --cream: 36 45% 93%;
+    --espresso: 0 11% 21%;
+    --terracotta: 20 54% 50%;
+    --warm-gray: 30 8% 55%;
     --latte: 34 35% 85%;
+    --charcoal: 0 0% 12%;
 
     --sidebar-background: 34 30% 94%;
-    --sidebar-foreground: 24 20% 16%;
-    --sidebar-primary: 24 30% 22%;
-    --sidebar-primary-foreground: 38 40% 97%;
+    --sidebar-foreground: 0 0% 12%;
+    --sidebar-primary: 0 11% 21%;
+    --sidebar-primary-foreground: 36 45% 93%;
     --sidebar-accent: 34 30% 90%;
-    --sidebar-accent-foreground: 24 30% 22%;
-    --sidebar-border: 30 20% 87%;
-    --sidebar-ring: 16 55% 52%;
+    --sidebar-accent-foreground: 0 11% 21%;
+    --sidebar-border: 30 18% 85%;
+    --sidebar-ring: 20 54% 50%;
   }
 }
 
@@ -87,17 +88,17 @@
   .bg-warm-overlay {
     background: linear-gradient(
       to bottom,
-      hsl(var(--espresso) / 0.6),
-      hsl(var(--espresso) / 0.4)
+      hsl(var(--espresso) / 0.65),
+      hsl(var(--espresso) / 0.45)
     );
   }
 
   .section-padding {
-    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
+    @apply px-4 py-20 md:px-8 md:py-28 lg:px-16;
   }
 
-  .fade-in-section {
-    animation: fade-in 0.6s ease-out forwards;
+  .section-padding-sm {
+    @apply px-4 py-12 md:px-8 md:py-16 lg:px-16;
   }
 }
 

@@ -1,23 +1,31 @@
 import { useState } from "react";
 import SectionWrapper from "@/components/SectionWrapper";
-import heroImg from "@/assets/hero-coffee.jpg";
 import latteImg from "@/assets/latte-art.jpg";
-import pastriesImg from "@/assets/pastries.jpg";
-import patioImg from "@/assets/patio.jpg";
 import espressoImg from "@/assets/espresso.jpg";
-import bodegaImg from "@/assets/bodega.jpg";
-import foodImg from "@/assets/food.jpg";
-import vibeImg from "@/assets/vibe.jpg";
+import latte2Img from "@/assets/gallery-latte2.jpg";
+import bodegaImg from "@/assets/gallery-bodega.jpg";
+import saladImg from "@/assets/gallery-salad.jpg";
+import menuboardImg from "@/assets/gallery-menuboard.jpg";
+import croissantImg from "@/assets/gallery-croissant.jpg";
+import windowImg from "@/assets/gallery-window.jpg";
+import signImg from "@/assets/gallery-sign.jpg";
+import muralImg from "@/assets/gallery-mural.jpg";
+import barImg from "@/assets/gallery-bar.jpg";
+import chandelierImg from "@/assets/gallery-chandelier.jpg";
 
 const images = [
   { src: latteImg, alt: "Latte art", category: "coffee" },
   { src: espressoImg, alt: "Espresso pull", category: "coffee" },
-  { src: pastriesImg, alt: "Fresh pastries", category: "food" },
-  { src: foodImg, alt: "Pork belly banh mi", category: "food" },
-  { src: patioImg, alt: "Patio seating", category: "patio" },
-  { src: heroImg, alt: "Interior", category: "vibe" },
-  { src: vibeImg, alt: "Cozy corner", category: "vibe" },
-  { src: bodegaImg, alt: "Bodega shelves", category: "vibe" },
+  { src: latte2Img, alt: "Heart latte art", category: "coffee" },
+  { src: croissantImg, alt: "Butter croissant & cortado", category: "food" },
+  { src: saladImg, alt: "Salad bowl & latte", category: "food" },
+  { src: chandelierImg, alt: "Patio chandelier", category: "patio" },
+  { src: barImg, alt: "Bar interior", category: "vibe" },
+  { src: muralImg, alt: "Wall mural", category: "vibe" },
+  { src: windowImg, alt: "Window plants", category: "vibe" },
+  { src: signImg, alt: "Community values", category: "vibe" },
+  { src: menuboardImg, alt: "Menu board", category: "vibe" },
+  { src: bodegaImg, alt: "Bodega counter", category: "vibe" },
 ];
 
 const filters = ["All", "Coffee", "Food", "Vibe", "Patio"];

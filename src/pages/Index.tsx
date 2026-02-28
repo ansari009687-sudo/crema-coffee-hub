@@ -7,20 +7,20 @@ import patioImg from "@/assets/patio.jpg";
 import bodegaImg from "@/assets/bodega.jpg";
 
 const menuHighlights = [
-  { name: "Coffee Latte", desc: "Silky steamed milk meets rich third-wave espresso.", icon: Coffee },
-  { name: "Vanilla Latte", desc: "House-made vanilla syrup with expertly pulled shots.", icon: Coffee },
-  { name: "Sweet Potato Waffle", desc: "Crispy, fluffy, and perfectly spiced.", icon: UtensilsCrossed },
-  { name: "Daily Quiche Selection", desc: "Fresh-baked with seasonal fillings.", icon: UtensilsCrossed },
-  { name: "Butter Croissant", desc: "Flaky, buttery, golden perfection.", icon: UtensilsCrossed },
-  { name: "Pork Belly Banh Mi", desc: "Bold flavors on a toasted baguette.", icon: UtensilsCrossed },
-];
+{ name: "Coffee Latte", desc: "Silky steamed milk meets rich third-wave espresso.", icon: Coffee },
+{ name: "Vanilla Latte", desc: "House-made vanilla syrup with expertly pulled shots.", icon: Coffee },
+{ name: "Sweet Potato Waffle", desc: "Crispy, fluffy, and perfectly spiced.", icon: UtensilsCrossed },
+{ name: "Daily Quiche Selection", desc: "Fresh-baked with seasonal fillings.", icon: UtensilsCrossed },
+{ name: "Butter Croissant", desc: "Flaky, buttery, golden perfection.", icon: UtensilsCrossed },
+{ name: "Pork Belly Banh Mi", desc: "Bold flavors on a toasted baguette.", icon: UtensilsCrossed }];
+
 
 const reviews = [
-  "From the moment we walked in, it felt incredibly homey.",
-  "The vanilla latte was fantastic, topped with beautiful latte art.",
-  "This place does true third-wave coffee — bright, acid-forward espresso done right.",
-  "This place is the OG of coffee in Denver.",
-];
+"From the moment we walked in, it felt incredibly homey.",
+"The vanilla latte was fantastic, topped with beautiful latte art.",
+"This place does true third-wave coffee — bright, acid-forward espresso done right.",
+"This place is the OG of coffee in Denver."];
+
 
 const Index = () => {
   return (
@@ -84,17 +84,17 @@ const Index = () => {
           </h2>
           <p className="text-muted-foreground text-center mb-10 max-w-md mx-auto">Handcrafted drinks & eclectic bites, made fresh daily.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {menuHighlights.map((item, i) => (
-              <div
-                key={item.name}
-                className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
+            {menuHighlights.map((item, i) =>
+            <div
+              key={item.name}
+              className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
+              style={{ animationDelay: `${i * 100}ms` }}>
+
                 <item.icon size={22} className="text-accent mb-3 group-hover:scale-110 transition-transform duration-200" />
                 <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{item.name}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </div>
-            ))}
+            )}
           </div>
           <div className="text-center mt-10">
             <Button asChild>
@@ -132,20 +132,20 @@ const Index = () => {
       <SectionWrapper className="bg-secondary/40">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="flex items-center justify-center gap-1 mb-3">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={26} className="fill-accent text-accent" />
-            ))}
+            {[...Array(5)].map((_, i) =>
+            <Star key={i} size={26} className="fill-accent text-accent" />
+            )}
           </div>
           <p className="font-heading text-4xl font-bold text-foreground mb-1">4.6 Stars</p>
           <p className="text-muted-foreground mb-10">1,501 Reviews · $10–20 per person</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-            {reviews.map((r, i) => (
-              <div key={i} className="bg-card rounded-xl p-6 shadow-sm text-left hover:shadow-md transition-shadow duration-300">
+            {reviews.map((r, i) =>
+            <div key={i} className="bg-card rounded-xl p-6 shadow-sm text-left hover:shadow-md transition-shadow duration-300">
                 <Star size={16} className="fill-accent text-accent mb-3" />
                 <p className="text-foreground italic text-sm leading-relaxed">"{r}"</p>
               </div>
-            ))}
+            )}
           </div>
 
           <Button variant="outline" asChild>
@@ -159,7 +159,7 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
-              <img src={bodegaImg} alt="Crema Bodega" className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700" />
+              <img alt="Crema Bodega" className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700" src="/lovable-uploads/37330286-1785-4701-ab8c-6c6f27c67ffb.jpg" />
             </div>
             <div className="order-1 md:order-2">
               <Store size={28} className="text-accent mb-3" />
@@ -203,8 +203,8 @@ const Index = () => {
           </Button>
         </div>
       </SectionWrapper>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Index;

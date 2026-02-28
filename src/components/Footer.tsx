@@ -1,35 +1,35 @@
 import { Link } from "react-router-dom";
-import { MapPin, Clock, Coffee } from "lucide-react";
+import { MapPin, Clock, Coffee, Instagram, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
-    <div className="container mx-auto px-4 py-12 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="container mx-auto px-4 py-10 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h3 className="font-heading text-2xl font-bold mb-3">Crema Coffee House</h3>
-          <div className="flex items-start gap-2 text-primary-foreground/80 text-sm mb-2">
-            <MapPin size={16} className="mt-0.5 shrink-0" />
-            <span>2862 Larimer St, Denver, CO 80205</span>
+          <h3 className="font-heading text-xl font-bold mb-3">Crema</h3>
+          <div className="flex items-start gap-2 text-primary-foreground/75 text-sm">
+            <MapPin size={14} className="mt-0.5 shrink-0" />
+            <span>2862 Larimer St<br />Denver, CO 80205</span>
           </div>
         </div>
 
         <div>
-          <h4 className="font-heading text-lg font-semibold mb-3">Hours</h4>
-          <div className="space-y-2 text-sm text-primary-foreground/80">
+          <h4 className="font-heading text-sm font-semibold mb-3 uppercase tracking-wide text-primary-foreground/60">Hours</h4>
+          <div className="space-y-2 text-sm text-primary-foreground/75">
             <div className="flex items-center gap-2">
-              <Coffee size={14} />
-              <span>Coffee — Open Daily, closes at 5 PM</span>
+              <Coffee size={13} />
+              <span>Coffee closes 5 PM</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock size={14} />
-              <span>Bodega — Daily 8 AM – 8 PM</span>
+              <Clock size={13} />
+              <span>Bodega 8 AM – 8 PM</span>
             </div>
           </div>
         </div>
 
         <div>
-          <h4 className="font-heading text-lg font-semibold mb-3">Navigate</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm text-primary-foreground/80">
+          <h4 className="font-heading text-sm font-semibold mb-3 uppercase tracking-wide text-primary-foreground/60">Navigate</h4>
+          <div className="grid grid-cols-2 gap-1.5 text-sm text-primary-foreground/75">
             {[
               { to: "/", label: "Home" },
               { to: "/menu", label: "Menu" },
@@ -44,9 +44,24 @@ const Footer = () => (
             ))}
           </div>
         </div>
+
+        <div>
+          <h4 className="font-heading text-sm font-semibold mb-3 uppercase tracking-wide text-primary-foreground/60">Social</h4>
+          <div className="flex gap-3">
+            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Instagram">
+              <Instagram size={20} />
+            </a>
+            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Facebook">
+              <Facebook size={20} />
+            </a>
+            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Twitter">
+              <Twitter size={20} />
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-xs text-primary-foreground/60">
+      <div className="border-t border-primary-foreground/15 mt-8 pt-5 text-center text-xs text-primary-foreground/50">
         © 2026 Crema Coffee House. All rights reserved.
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionWrapper from "@/components/SectionWrapper";
-import { Star, MapPin, Clock, Coffee, UtensilsCrossed, Store, ArrowRight } from "lucide-react";
+import { Star, MapPin, Clock, Coffee, UtensilsCrossed, Store, ArrowRight, BadgeCheck } from "lucide-react";
 import heroImg from "@/assets/hero-coffee.jpg";
 import patioImg from "@/assets/patio.jpg";
 import bodegaImg from "@/assets/bodega.jpg";
@@ -142,7 +142,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             {reviews.map((r, i) =>
             <div key={i} className="bg-card rounded-xl p-6 shadow-sm text-left hover:shadow-md transition-shadow duration-300">
-                <Star size={16} className="fill-accent text-accent mb-3" />
+                <BadgeCheck size={16} className="fill-accent text-accent mb-3 mx-px" />
                 <p className="text-foreground italic text-sm leading-relaxed">"{r}"</p>
               </div>
             )}
